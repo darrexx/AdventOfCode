@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1", "Day1\Day1.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoCInputReader", "AoCInputReader\AoCInputReader.csproj", "{90E84277-677E-4227-B617-E74EA67A9930}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1.2", "Day1.2\Day1.2.csproj", "{75E9F5F1-B14D-4E9A-9E14-6491DE7EBA44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{90E84277-677E-4227-B617-E74EA67A9930}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90E84277-677E-4227-B617-E74EA67A9930}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90E84277-677E-4227-B617-E74EA67A9930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E9F5F1-B14D-4E9A-9E14-6491DE7EBA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E9F5F1-B14D-4E9A-9E14-6491DE7EBA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E9F5F1-B14D-4E9A-9E14-6491DE7EBA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E9F5F1-B14D-4E9A-9E14-6491DE7EBA44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

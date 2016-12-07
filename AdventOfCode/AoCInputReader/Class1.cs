@@ -8,5 +8,6 @@ namespace AoCInputReader
 {
     public class Class1
     {
+
     }
 }
