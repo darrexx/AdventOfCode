@@ -15,9 +15,9 @@ namespace Day1._2
             streetGrid[500, 500] = true;
             var direction = FacingDirection.North;
             var input = args[0].Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            int positionX = 500;
-            int positionY = 500;
-            for (int i = 0; i < input.Length; i++)
+            var positionX = 500;
+            var positionY = 500;
+            for (var i = 0; i < input.Length; i++)
             {
                 string rotation = input[i].Substring(0, 1);
                 switch (rotation)
@@ -30,60 +30,67 @@ namespace Day1._2
                         break;
                 }
                 int length;
-                if (!Int32.TryParse(input[i].Substring(1), out length))
+                if (!int.TryParse(input[i].Substring(1), out length))
                 {
                     throw new Exception("Invalid Input");
                 }
-                var previousX = positionX;
-                var previousY = positionY;
                 switch (direction)
                 {
                     case FacingDirection.East:
-                        positionX += length;
-                        if (streetGrid[positionX, positionY])
+                        for (var j = 0; j < length; j++)
                         {
-                            break;
+                            if (streetGrid[positionX + 1, positionY])
+                            {
+                                positionX++;
+                                Console.WriteLine(Math.Abs(positionX - 500) + Math.Abs(positionY - 500));
+                                return;
+                            }
+                            streetGrid[positionX + 1, positionY] = true;
+                            positionX++;
                         }
-                        streetGrid[positionX, positionY] = true;
                         break;
                     case FacingDirection.North:
-                        positionY += length;
-                        if (streetGrid[positionX, positionY])
+                        for (var j = 0; j < length; j++)
                         {
-
+                            if (streetGrid[positionX, positionY + 1])
+                            {
+                                positionY++;
+                                Console.WriteLine(Math.Abs(positionX - 500) + Math.Abs(positionY - 500));
+                                return;
+                            }
+                            streetGrid[positionX, positionY + 1] = true;
+                            positionY++;
                         }
-                        streetGrid[positionX, positionY] = true;
                         break;
                     case FacingDirection.South:
-                        positionY -= length;
-                        if (streetGrid[positionX, positionY])
+                        for (var j = 0; j < length; j++)
                         {
-
+                            if (streetGrid[positionX, positionY - 1])
+                            {
+                                positionY--;
+                                Console.WriteLine(Math.Abs(positionX - 500) + Math.Abs(positionY - 500));
+                                return;
+                            }
+                            streetGrid[positionX, positionY - 1] = true;
+                            positionY--;
                         }
-                        streetGrid[positionX, positionY] = true;
                         break;
                     case FacingDirection.West:
-                        positionX -= length;
-                        if (streetGrid[positionX, positionY])
+                        for (var j = 0; j < length; j++)
                         {
-
+                            if (streetGrid[positionX - 1, positionY])
+                            {
+                                positionX--;
+                                Console.WriteLine(Math.Abs(positionX - 500) + Math.Abs(positionY - 500));
+                                return;
+                            }
+                            streetGrid[positionX - 1, positionY] = true;
+                            positionX--;
                         }
-                        streetGrid[positionX, positionY] = true;
                         break;
                 }
-                for (int j = previousY + 1; j <= positionY; j++)
-                {
-                    for (var k = previousX + 1; k >= positionX; k++)
-                    {
-                        if (streetGrid[j, k])
-                        {
-
-                        }
-                        streetGrid[j, k] = true;
-                    }
-                }
             }
-            Console.WriteLine(Math.Abs(positionX - 500) + (Math.Abs(positionY - 500)));
+            Console.WriteLine(Math.Abs(positionX - 500) + Math.Abs(positionY - 500));
         }
     }
 }
